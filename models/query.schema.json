@@ -1,0 +1,49 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "origin": {
+      "type": "string",
+      "$ref": "#/definitions/non-empty-string"
+    },
+    "version": {
+      "type": "string",
+      "$ref": "#/definitions/non-empty-string"
+    },
+    "limit": {
+      "type": "string",
+      "$ref": "#/definitions/non-empty-string"
+    },
+    "name": {
+      "type": "string",
+      "enum": [
+        "a",
+        "b",
+        "xxxx"
+      ]
+    }
+  },
+  "anyOf": [
+    {
+      "required": [
+        "origin"
+      ]
+    },
+    {
+      "required": [
+        "version"
+      ]
+    },
+    {
+      "required": [
+        "limit"
+      ]
+    }
+  ],
+  "definitions": {
+    "non-empty-string": {
+      "type": "string",
+      "minLength": 1
+    }
+  }
+}
