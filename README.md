@@ -4,7 +4,16 @@ Date Created: Jan 7, 2021 1:15 PM Property: Mar 30, 2021 2:18 PM Status: 进行�
 
 # 待测面板
 
-[待测列表](https://www.notion.so/4c7c901336434f52a5d556c77c7e7f46)
+|库名|来源|校验方式|优点|缺点|特性::自定义错误提示|特性::转换字段类型或值|
+|:----|:----|:----|:----|:----|:----|:----|
+|ozzo-validation|https://github.com/go-ozzo/ozzo-validation|增加ViewModel的特定方法校验|类型自动补全, 易于重构; 预置方法(规则)丰富|使用时最好重命名库名字, 要不太冗余; 好久未更新了|Yes|No|
+|validate|https://github.com/gobuffalo/validate|增加ViewModel的特定方法校验|类型自动补全, 易于重构|一年未更新了|Yes|No|
+|validate|https://github.com/gookit/validate|structure tag的方式校验+自定义validate loc|内置规则丰富; 更新频繁|比较复杂; 重构蛋疼|Yes|No|
+|validator|https://github.com/go-playground/validator|structure tag的方式校验+自定义validate loc|内置规则丰富; |重构蛋疼|Yes|No|
+|gody|https://github.com/guiferpa/gody|structure tag的方式校验+自定义validate loc|接口简单, 方便学习; |比较原始|Yes|No|
+|jio|https://github.com/faceair/jio|对序列化前的JSON字符串作校验|链式调用方便写; 可以作转换|两年未更新了; 重构蛋疼|No|No|
+|gojsonschema|https://github.com/xeipuuv/gojsonschema|对序列化前的JSON字符串作校验|接受schema作校验, 使用方便|好久没更新了; 重构中等难度|No|No|
+
 
 # 校验时遇到的问题
 
