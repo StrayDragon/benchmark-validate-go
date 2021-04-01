@@ -3,6 +3,7 @@ module github.com/straydragon/benchmark-validate-go
 go 1.15
 
 require (
+	github.com/davecgh/go-spew v1.1.1
 	github.com/faceair/jio v1.0.1
 	github.com/go-ozzo/ozzo-validation/v4 v4.3.0
 	github.com/go-playground/validator/v10 v10.4.1

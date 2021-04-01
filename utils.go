@@ -1,6 +1,7 @@
 package benchmark_validate_go
 
 import (
+	"fmt"
 	"io/ioutil"
 	"path"
 	"path/filepath"
@@ -40,4 +41,8 @@ func GetTargetJSONFileStandardPath(name string) string {
 	}
 	targetPath := path.Join(modelsJSONPath, name)
 	return "file://" + targetPath
+}
+
+func GetJSONFileName(exampleName, caseName string) string {
+	return fmt.Sprintf("%s.%s.json", exampleName, caseName)
 }

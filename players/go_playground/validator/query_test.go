@@ -57,7 +57,7 @@ func QueryReqValidation(caseName string) error {
 	return nil
 }
 
-func BenchmarkValidatorQueryReqRun(b *testing.B) {
+func BenchmarkGoPlayGroundValidatorQueryReqRun(b *testing.B) {
 	benchmarks := []struct {
 		name     string
 		caseName string

@@ -31,15 +31,14 @@ func QueryReqValidation(caseName string) error {
 	if err != nil {
 		return err
 	}
-	if result.Valid() {
-		queryReq := QueryReq{}
-		data := BenchmarkPopularInputModelValidate.ReadJSONFile(getJSONFileName(caseName))
-		if err := json.Unmarshal(data, &queryReq); err != nil {
-			// log.Println("Unmarshal Json Error", err)
-			return err
-		}
-	} else {
+	if !result.Valid() {
 		return errors.New("校验错误")
+	}
+	queryReq := QueryReq{}
+	data := BenchmarkPopularInputModelValidate.ReadJSONFile(getJSONFileName(caseName))
+	if err := json.Unmarshal(data, &queryReq); err != nil {
+		// log.Println("Unmarshal Json Error", err)
+		return err
 	}
 	return nil
 }

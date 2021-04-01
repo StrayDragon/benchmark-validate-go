@@ -14,10 +14,10 @@ func getJSONFileName(caseName string) string {
 }
 
 type QueryReq struct {
-	Origin  string `json:"origin" validate:"required"`
-	Limit   string `json:"limit" validate:"required"`
-	Name    string `json:"name" validate:"nameValid" message:"name不在范围内"`
-	Version string `json:"version" validate:"required"`
+	Origin  string `json:"origin"`
+	Limit   string `json:"limit"`
+	Name    string `json:"name"`
+	Version string `json:"version"`
 }
 
 func QueryReqValidation(caseName string) error {

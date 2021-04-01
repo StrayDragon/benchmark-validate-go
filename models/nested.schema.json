@@ -1,0 +1,80 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "$ref": "#/definitions/non-empty-string"
+    },
+    "address": {
+      "type": "object",
+      "properties": {
+        "streetAddress": {
+          "type": "string",
+          "$ref": "#/definitions/non-empty-string"
+        },
+        "city": {
+          "type": "string",
+          "$ref": "#/definitions/non-empty-string"
+        },
+        "state": {
+          "type": "string",
+          "$ref": "#/definitions/non-empty-string"
+        },
+        "postalCode": {
+          "type": "integer",
+          "minimum": 10000,
+          "maximum": 20000
+        }
+      },
+      "required": [
+        "streetAddress",
+        "city",
+        "state",
+        "postalCode"
+      ]
+    },
+    "phoneNumbers": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "$ref": "#/definitions/non-empty-string"
+      }
+    },
+    "additionalInfo": {
+      "anyOf": [
+        {
+          "type": "null"
+        },
+        {
+          "type": "object"
+        }
+      ]
+    },
+    "remote": {
+      "type": "boolean"
+    },
+    "height": {
+      "type": "number"
+    },
+    "ficoScore": {
+      "type": "string",
+      "$ref": "#/definitions/non-empty-string"
+    }
+  },
+  "required": [
+    "name",
+    "address",
+    "phoneNumbers",
+    "additionalInfo",
+    "remote",
+    "height",
+    "ficoScore"
+  ],
+  "definitions": {
+    "non-empty-string": {
+      "type": "string",
+      "minLength": 1
+    }
+  }
+}
